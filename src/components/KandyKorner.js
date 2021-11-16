@@ -2,6 +2,7 @@
 // This is the main component.
 
 import { LocationList } from "./locations/LocationsList"
+import { ProductList } from "./products/ProductList"
 
 
 export const KandyKorner = () => {
@@ -14,6 +15,9 @@ export const KandyKorner = () => {
 
             <h2>Location's List</h2>
             <LocationList />
+
+            <h2>Product's List</h2>
+            <ProductList />
             
         </>
     )

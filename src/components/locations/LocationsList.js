@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 
 export const LocationList = () => {
     const [locations, setLocations] = useState([])
+    
 
     useEffect(
         () => {
@@ -20,7 +21,7 @@ export const LocationList = () => {
             {
                 locations.map(
                     (location) => {
-                        return <p key={`location--${location.id}`}>{location.address}</p>
+                        return <ul key={`location--${location.id}`}>{location.address}</ul>
                     }
                 )
             }
