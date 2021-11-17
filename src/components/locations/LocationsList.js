@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-export const LocationList = () => {
+export const LocationsList = () => {
     const [locations, setLocations] = useState([])
     
 

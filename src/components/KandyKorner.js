@@ -1,24 +1,22 @@
 
 // This is the main component.
 
-import { LocationList } from "./locations/LocationsList"
-import { ProductList } from "./products/ProductList"
-
+import React from "react"
+import { Route } from "react-router-dom"
+import { NavBar } from "./nav/NavBar"
+import { ApplicationViews } from "./ApplicationViews"
+import "./KandyKorner.css"
 
 export const KandyKorner = () => {
-
-//Render the customer, employee list.
     return (
-
         <>
-            <h1>Kandy Korner Candy Shop</h1>
 
-            <h2>Location's List</h2>
-            <LocationList />
+            <NavBar />
 
-            <h2>Product's List</h2>
-            <ProductList />
-            
+            <h2>Kandy Korner Candy Shop</h2>
+
+            <ApplicationViews />
+
         </>
     )
 }
