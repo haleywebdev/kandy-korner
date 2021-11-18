@@ -12,6 +12,7 @@ import { EmployeeList } from "./employees/EmployeeList.js"
 import { HiringForm } from "./employees/HiringForm.js"
 import { LocationsList } from "./locations/LocationsList.js"
 import { ProductList } from "./products/ProductList.js"
+import { CustomerList } from "./customers/CustomerList.js"
 
 export const ApplicationViews = () => {
     return (
@@ -22,6 +23,10 @@ export const ApplicationViews = () => {
 
             <Route path="/Products">
                 <ProductList />
+            </Route>
+
+            <Route path="/Customers">
+                <CustomerList />
             </Route>
 
             <Route exact path="/Employees">
