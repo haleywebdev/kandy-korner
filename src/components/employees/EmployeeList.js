@@ -22,7 +22,7 @@ export const EmployeeList = () => {
 
     useEffect(
         () => {
-            fetch("http://localhost:8088/employees?_expand=locationId?&_expand=location")
+            fetch("http://localhost:8088/employees?_expand=locationId&_expand=location")
                 .then(res => res.json())
                 .then((employeesArray) => {
                     updateEmployees(employeesArray)
@@ -41,7 +41,7 @@ export const EmployeeList = () => {
             {
                 employees.map(
                     (employee) => {
-                        return <p key={`employee--${employee.id}`}>{employee.name} works at {employee.locationId}.
+                        return <p key={`employee--${employee.id}`}>{employee.name} works at {employee.locationId?.name}.
                         </p>
                     }
                 )
