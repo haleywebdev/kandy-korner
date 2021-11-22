@@ -13,6 +13,10 @@ export const ProductList = () => {
                 })
         },
         []
+        // if you remove this array, this useEffect will now react with ANY state change and will result in another
+        // infinite loop!! 
+        // if you put the "products" argument in this dependency array, you will also end up in an infinite loop!!
+        // be careful :)
     )
 
     // Use the _expand query string parameter feature of json-server to embed the product type object in the product object when you query the API.
@@ -36,7 +40,7 @@ export const ProductList = () => {
             {
                 products.map(
                     (product) => {
-                        return <div key={`product--${product.productType.id}`}>{product.productType.type} 
+                        return <div key={`product--${product.productType.id}`}>{product.candy} 
 
                         </div>
                     }

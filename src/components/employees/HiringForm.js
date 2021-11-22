@@ -73,6 +73,7 @@ export const HiringForm = () => {
                         <select value={employee.locationId}
                             onChange={
                                 (evt) => {
+                                    // you cannot directly modify state. you must make a copy of state using ...
                                     const copy = { ...employee }
                                     copy.locationId = evt.target.value
                                     updateEmployee(copy)
