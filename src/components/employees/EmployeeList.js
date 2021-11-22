@@ -22,14 +22,30 @@ export const EmployeeList = () => {
 
     useEffect(
         () => {
-            fetch("http://localhost:8088/employees?_expand=locationId&_expand=location")
-                .then(res => res.json())
-                .then((employeesArray) => {
-                    updateEmployees(employeesArray)
-                })
+            fetchEmployees()
         },
         []
     )
+
+    const fetchEmployees = () => {
+        fetch("http://localhost:8088/employees?_expand=locationId&_expand=location")
+            .then(res => res.json())
+            .then((employeesArray) => {
+                updateEmployees(employeesArray)
+            }
+            )
+    }
+
+    const fireEmployee = (id) => {
+        fetch(`http://localhost:8088/employees/${id}`, {
+            method: "DELETE"
+        })
+            .then(
+                () => {
+                    fetchEmployees()
+                }
+            )
+    }
 
     return (
         <>
@@ -41,8 +57,10 @@ export const EmployeeList = () => {
             {
                 employees.map(
                     (employee) => {
-                        return <p key={`employee--${employee.id}`}>{employee.name} works at {employee.locationId?.name}.
-                        </p>
+                        return <><p key={`employee--${employee.id}`}>{employee.name} works at {employee.locationId}.
+                        </p><button onClick={() => {
+                            fireEmployee(employee.id)
+                        }}>Fire Employee</button></>
                     }
                 )
             }

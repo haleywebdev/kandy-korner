@@ -17,7 +17,7 @@ export const KandyKorner = () => (
                     return (
                         <>
                             <NavBar />
-                            <h1>Kandy Korner Candy Shop</h1>
+                            <center><h1>Kandy Korner Candy Shop</h1></center>
                             <ApplicationViews />
                         </>
                     );

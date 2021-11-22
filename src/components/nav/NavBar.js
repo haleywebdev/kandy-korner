@@ -9,7 +9,11 @@ import "./NavBar.css"
 export const NavBar = (props) => {
     return (
         <ul className="navbar">
-            
+
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/KandyKorner"><img src="/peppermint.png"></img></Link>
+            </li>
+
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/Locations">Locations</Link>
             </li>
@@ -17,7 +21,7 @@ export const NavBar = (props) => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/Products">Products</Link>
             </li>
-            
+
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/Purchases">My Orders</Link>
             </li>
@@ -28,13 +32,13 @@ export const NavBar = (props) => {
 
             <li className="navbar__item active">
                 <Link className="navbar__link" to="#"
-                onClick={
-                    () => { 
-                        localStorage.removeItem("kandy_customer")
-                    }
-                }>
+                    onClick={
+                        () => {
+                            localStorage.removeItem("kandy_customer")
+                        }
+                    }>
                     Logout
-                    </Link>
+                </Link>
             </li>
 
         </ul>
