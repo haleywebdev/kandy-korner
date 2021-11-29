@@ -11,7 +11,7 @@ export const NavBar = (props) => {
         <ul className="navbar">
 
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/KandyKorner"><img src="/peppermint.png"></img></Link>
+                <Link className="navbar__link" to="/KandyKorner"><img src="/peppermint.png" alt="Peppermint Candy Home Button"></img></Link>
             </li>
 
             <li className="navbar__item active">
@@ -20,6 +20,10 @@ export const NavBar = (props) => {
 
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/Products">Products</Link>
+            </li>
+
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/Customers">Customers</Link>
             </li>
 
             <li className="navbar__item active">

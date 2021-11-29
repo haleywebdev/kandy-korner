@@ -48,22 +48,24 @@ export const EmployeeList = () => {
     }
 
     return (
-        <>
-
+        <><center>
+<h2>We're Hiring!</h2>
             <div>
                 <button onClick={() => history.push("/employees/create")}>New Hire Application</button>
             </div>
 
+            <h4>Current Employees List</h4>
+
             {
                 employees.map(
                     (employee) => {
-                        return <><p key={`employee--${employee.id}`}>{employee.name} works at {employee.locationId}.
-                        </p><button onClick={() => {
+                        return <><p key={`employee--${employee.id}`}>{employee.name} works at {employee.locationId}. 
+                        <button onClick={() => {
                             fireEmployee(employee.id)
-                        }}>Fire Employee</button></>
+                        }}>Fire Employee</button></p></>
                     }
                 )
-            }
+            }</center>
         </>
     )
 }
